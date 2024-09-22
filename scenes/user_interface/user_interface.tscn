@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr8usuv7xaq2y"]
+
+[ext_resource type="Theme" uid="uid://ciyuwpo4shgkg" path="res://resources/ui_theme.tres" id="1_xgnep"]
+[ext_resource type="Script" path="res://scripts/user_interface/user_interface.gd" id="2_ohnv7"]
+[ext_resource type="PackedScene" uid="uid://rbgacr7it4d5" path="res://scenes/user_interface/generic_ui/main_actions_ui/main_actions_ui.tscn" id="3_fuxba"]
+[ext_resource type="Script" path="res://scripts/user_interface/active_ui.gd" id="3_jbe5c"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xgnep")
+script = ExtResource("2_ohnv7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.5
+offset_top = 22.0
+offset_right = 111.5
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "Pensamentos Automáticos"
+horizontal_alignment = 1
+
+[node name="ActiveUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_jbe5c")
+
+[node name="MainActionsUI" parent="ActiveUI" instance=ExtResource("3_fuxba")]
+layout_mode = 1
+
+[connection signal="ui_changed" from="ActiveUI/MainActionsUI" to="ActiveUI" method="change_ui"]

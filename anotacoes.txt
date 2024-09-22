@@ -1,0 +1,22 @@
+# Pensamento
+
+Data (texto)
+Situação (texto)
+Pensamento (texto)
+Quanto acredita (0 a 100)
+Emoção (texto)
+Intensidade (0 a 100)
+
+# A fazer
+
+- Adicionr este arquivo ao repositório
+- Criar repo github
+- fazer commit
+
+- Implementar carregamento de listagem de pensamentos
+- Implementar carregamento de pensamento específico
+
+
+
+
+

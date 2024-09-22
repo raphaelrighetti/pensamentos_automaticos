@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl65u5sah7n3a"]
+
+[ext_resource type="Theme" uid="uid://ciyuwpo4shgkg" path="res://resources/ui_theme.tres" id="1_vjm2u"]
+[ext_resource type="PackedScene" uid="uid://dr8usuv7xaq2y" path="res://scenes/user_interface/user_interface.tscn" id="2_oipbk"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vjm2u")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -400.0
+offset_right = 180.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vjm2u")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(360, 800)
+render_target_update_mode = 4
+
+[node name="UserInterface" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_oipbk")]
